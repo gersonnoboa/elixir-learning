@@ -4,6 +4,7 @@ defmodule Servy.Conv do
             resp_body: "",
             status: nil,
             headers: %{},
+            resp_content_type: "text/html",
             params: %{}
 
   def full_status(conv) do
