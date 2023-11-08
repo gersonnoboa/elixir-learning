@@ -12,7 +12,8 @@ defmodule Servy.HttpServer do
     {:ok, client_socket} = :gen_tcp.accept(listen_socket)
 
     IO.puts("⚡️  Connection accepted!\n")
-    serve(client_socket)
+    spawn(fn -> serve(client_socket) end)
+
     accept_loop(listen_socket)
   end
 
